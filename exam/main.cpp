@@ -41,8 +41,9 @@ class PaketBesokSampai : public Paket {
 
 // Derived Class
 class PaketInstan : public Paket {
- public:
+ protected:
   int jarak;
+ public:
   void setData(float b, int j) {
     beratBarang = b;
     jarak = j;
