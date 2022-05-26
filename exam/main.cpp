@@ -32,8 +32,9 @@ class PaketBesokSampai : public Paket {
  public:
   void setData(float b) {
     beratBarang = b;
-    // Total harga based on Berat barang ditambah flat-fee per 5kg 
-    float beratPerLima = b / 5;
+    // Total harga based on Berat barang ditambah flat-fee per 5kg
+    // 5kg pertama dianggap 1x flat fee
+    float beratPerLima = b > 5 ? b / 5 : 1;
     totalHarga = beratBarang * HARGA_PER_KG + round(beratPerLima) * FLAT_FEE_BESOK_SAMPAI;
   }
 };
